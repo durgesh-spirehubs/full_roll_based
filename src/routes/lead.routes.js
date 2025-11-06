@@ -1,0 +1,10 @@
+import  { Router } from "express";
+import { ensureAuth } from "../middleware/auth.js";
+import { assignLead, createLead, getLeads, unassignlead, updateLead } from "../controller/lead.js";
+const router=Router();
+router.post("/",createLead);
+router.patch("/:id",ensureAuth("Admin"),updateLead);
+router.post("/assign-lead/:id",ensureAuth("Admin","Staff"),assignLead);
+router.delete("/unassign-lead/:id",ensureAuth("Admin","Staff"),unassignlead);
+router.get("/",ensureAuth("Admin","User","Staff"),getLeads);
+export default router;

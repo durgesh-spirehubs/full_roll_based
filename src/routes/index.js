@@ -1,0 +1,17 @@
+import {Router} from 'express';
+const api=Router();
+import userRoutes from "./users.routes.js";
+import staffRoutes from "./staff.routes.js";
+import notificationRoutes from "../models/notification.js";
+import leadRoutes from "./lead.routes.js";
+import inquiryRoutes from "./inquiry.routes.js";
+import dashboardRoutes from "./dashboard.routes.js";
+import attendanceRoutes from "./attendance.routes.js";
+api.use("/user",userRoutes);
+api.use("/staff",staffRoutes);
+api.use("/notification",notificationRoutes);
+api.use("/lead",leadRoutes);
+api.use("/inquiry",inquiryRoutes);
+api.use("/dashboard",dashboardRoutes);
+api.use("/attendance",attendanceRoutes);
+export default api;

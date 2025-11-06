@@ -1,0 +1,10 @@
+{
+	"uservalidation": {
+		"firstName": "uservalidation.firstName",
+		"firstNameLength": "uservalidation.firstNameLength",
+		"password": {
+			"required": "uservalidation.password.required",
+			"isValid": "uservalidation.password.isValid"
+		}
+	}
+}

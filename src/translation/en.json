@@ -1,0 +1,516 @@
+{
+  "noUser": "No user found",
+  "noData": "No Data found",
+  "noStatus": "your status is not active",
+  "phoneNotformet": "phone number is not formatted",
+  "serverError": "Somethings wents wrong! Please try again!",
+  "denied": "Access Denied",
+  "invalidIdError": "invalidIdError",
+  "users": {
+    "login": "LogIn Successfully",
+    "verify": "Email verified successfully",
+    "wrongPassword": "Password is incorrect",
+    "mailNotVerified": "Email is not verified",
+    "sendOtp": "OTP sent to your registerd mail",
+    "otpNotMatch": "OTP not matched",
+    "otpExp": "OTP expired!",
+    "changPassword": "Password change successfully",
+    "passwordUpdate": "Password update Successfully",
+    "passwordMismatch": "Password mismatch to old password",
+    "userCreate": "User created successfully",
+    "userUpdate": "User update successfully",
+    "deleteUser": "User deleted successfully",
+    "inActive": "User Inactive successfully",
+    "active": "User Active successfully"
+  },
+  "notes": {
+    "noteCreate": "Note created successfully",
+    "noteUpdate": "Note update successfully",
+    "noteDelete": "Note deleted successfully",
+    "noteActive": "Note active successfully",
+    "noteInactive": "Note inactive successfully"
+  },
+  "assign": {
+    "assignUser": "Lead assigned to staff successfully",
+    "assignDelete": "Staff removed successfully",
+    "assignActive": "Lead active for staff successfully",
+    "assignInactive": "Lead inactive for staff successfully"
+  },
+  "customers": {
+    "customerCreate": "Customer created successfully",
+    "customerUpdate": "Customer update successfully",
+    "customerDelete": "Customer deleted successfully",
+    "customerActive": "Customer Active successfully",
+    "customerInactive": "Customer Inactive successfully"
+  },
+  "clients": {
+    "clientCreate": "Client created successfully",
+    "clientUpdate": "Client update successfully",
+    "clientDelete": "Client deleted successfully",
+    "clientActive": "Client Active successfully",
+    "clientInactive": "Client Inactive successfully",
+    "clientDetail": "Client Detail  Created successfully",
+    "clientDetailUpdate": "Client Detail update successfully",
+    "clientDetailDelete": "Client Detail deleted successfully",
+    "clientDetailActive": "Client Detail Active successfully",
+    "clientDetailInactive": "Client Detail Inactive successfully"
+  },
+  "departments": {
+    "departmentCreate": "Department created successfully",
+    "departmentUpdate": "Department update successfully",
+    "departmentDelete": "Department deleted successfully",
+    "departmentActive": "Department Active successfully",
+    "departmentInactive": "Department Inactive successfully"
+  },
+  "staffs": {
+    "staffCreate": "Staff created successfully",
+    "staffUpdate": "Staff update successfully",
+    "staffDelete": "Staff deleted successfully",
+    "staffActive": "Staff Active successfully",
+    "staffInactive": "Staff Inactive successfully"
+  },
+  "roles": {
+    "roleCreate": "Role created successfully",
+    "roleUpdate": "Role update successfully",
+    "roleDelete": "Role deleted successfully",
+    "roleActive": "Role Active successfully",
+    "roleInactive": "Role Inactive successfully"
+  },
+  "leads": {
+    "leadCreate": "lead created successfully",
+    "leadUpdate": "lead update successfully",
+    "leadDelete": "lead deleted successfully",
+    "leadInActive": "lead Inactive successfully",
+    "leadActive": "lead Active successfully",
+    "leadAssign": "lead assign successfully",
+    "leadReassign": "lead Reassign successfully",
+    "leadUnAssign": "lead Un Assign successfully",
+    "leadAllreadyAssign": "lead allready assign this user",
+    "leadAlreadyConvert": "lead already converted in client",
+    "leadArrayRequired": "LeadId and StaffId  is required",
+    "leadBulkAssign": "Lead assign in bulk successfully",
+    "leadBulkDelete": "Lead successfully deleted in bulk",
+    "leadDeskNotMatch": "Staff Id desk not match to given Desk",
+    "leadBulkImport": "Leads have been successfully uploaded",
+    "leadConvert": "lead converted to client",
+    "quotationCreate": "Quotation created successfully",
+    "quotationUpdate": "Quotation update successfully",
+    "quotationDelete": "Quotation deleted successfully",
+    "quotationActive": "Quotation Active successfully",
+    "quotationInActive": "Quotation Inactive successfully",
+    "totalAmountRequired": "Total Amount is Required.",
+    "totalAmountLength": "Total Amount should be at least 1 chars",
+    "totalAmountInt": "Total Amount should be in chars",
+    "invoiceCreate": "Invoice created successfully",
+    "invoiceUpdate": "Invoice update successfully",
+    "invoiceDelete": "Invoice deleted successfully",
+    "invoiceActive": "Invoice Active successfully",
+    "invoiceInActive": "Invoice Inactive successfully"
+  },
+  "announcements": {
+    "announcementCreate": "Announcement created successfully",
+    "announcementUpdate": "Announcement update successfully",
+    "announcementDelete": "Announcement deleted successfully",
+    "announcementActive": "Announcement Active successfully",
+    "announcementInactive": "Announcement Inactive successfully"
+  },
+  "attendances": {
+    "attendanceCreate": "Attendance created successfully",
+    "attendanceUpdate": "Attendance update successfully",
+    "attendanceDelete": "Attendance deleted successfully",
+    "attendanceActive": "Attendance Active successfully",
+    "attendanceInactive": "Attendance Inactive successfully",
+    "clockIn": "Clock In successfully",
+    "clockOut": "Clock Out successfully",
+    "noAttendance": "No Attendance Found!"
+  },
+  "holidays": {
+    "holidayCreate": "Holiday added successfully",
+    "holidayUpdate": "Holiday update successfully",
+    "holidayDelete": "Holiday deleted successfully",
+    "noHoliday": "No Holiday Found!",
+    "holidayActive": "Holiday Active successfully",
+    "holidayInactive": "Holiday Inactive successfully"
+  },
+  "leaves": {
+    "leaveCreate": "Leave added successfully",
+    "leaveUpdate": "Leave update successfully",
+    "leaveDelete": "Leave deleted successfully",
+    "leaveActive": "Leave Active successfully",
+    "leaveInactive": "Leave Inactive successfully",
+    "dateRequired": "Start and end date is required",
+    "NoLeave": "No Leave Found!",
+    "leaveTypeCreate": "Leave Type created successfully",
+    "leaveTypeUpdate": "Leave Type update successfully",
+    "leaveTypeDelete": "Leave Type deleted successfully",
+    "leaveTypeActive": "Leave Type Active successfully",
+    "leaveTypeInactive": "Leave Type Inactive successfully",
+    "shiftCreate": "Shift Created successfully",
+    "shiftUpdate": "Shift update successfully",
+    "shiftDelete": "Shift deleted successfully",
+    "shiftActive": "Shift Active successfully",
+    "shiftInactive": "Shift Inactive successfully",
+    "noShift": "No Shift Found!",
+    "weekOffCreate": "Users week offs created successfully",
+    "weekOffUpdate": "Users week offs update successfully",
+    "weekOffDelete": "Users week offs deleted successfully",
+    "weekOffActive": "Users week offs Active successfully",
+    "weekOffInactive": "Users week offs Inactive successfully"
+  },
+  "auth": {
+    "notAuthrize": "The request does not have an Authentication header.",
+    "tokenExp": "Token Expired",
+    "tokenInvalid": "Invalid Token",
+    "userInvalid": "Invalid User",
+    "serverError": "Server Error"
+  },
+  "leadValidation": {
+    "requester": "Requester is required.",
+    "customerName": "Name is required.",
+    "contactName": "Contact name is required.",
+    "email": {
+      "required": "Email is required.",
+      "valid": "Email is not a valid email.",
+      "emailUse": "E-mail already in use"
+    },
+    "phone": {
+      "required": " PhoneNumber is required.",
+      "valid": "Phone Number is not a valid Phone Number"
+    },
+    "required": {
+      "required": "leadValidation.required.required"
+    }
+  },
+  "uservalidation": {
+    "firstName": "First Name is required.",
+    "lastName": "Last Name is required.",
+    "firstNameLength": "first name should be at least 1 chars",
+    "lastNameLength": "last name should be at least 1 chars",
+    "password": {
+      "required": "Password is required.",
+      "isValid": "Password must be at least 7 characters"
+    },
+    "otpValid": "OTP is not Valid"
+  },
+  "status": {
+    "statusCreate": "Status created successfully",
+    "statusUpdate": "Status update successfully",
+    "statusDelete": "Status deleted successfully",
+    "statusActive": "Status  Active successfully",
+    "statusInactive": "Status Inactive successfully"
+  },
+  "addresses": {
+    "addressesCreate": "Address Created successfully",
+    "addressesUpdate": "Address update successfully",
+    "addressesDelete": "Address deleted successfully",
+    "addressesActive": "Address Active successfully",
+    "addressesInactive": "Address Inactive successfully"
+  },
+  "addressesValidation": {
+    "userIdRequired": "User is required.",
+    "userIsInt": "Please enter valid user",
+    "addressType": "Please enter address",
+    "addressLine1": "Please enter  addressLine1",
+    "addressLine2": "Please enter  addressLine2",
+    "country": "Please enter valid country",
+    "state": "Please enter valid  state",
+    "city": "Please enter valid  city",
+    "pincode": "Please enter valid  pincode"
+  },
+  "requests": {
+    "requestsCreate": "Lead Created successfully",
+    "requestsFound": "Lead found successfully",
+    "requestsUpdate": "Lead update successfully",
+    "requestDelete": "Lead deleted successfully",
+    "requestActive": "Lead status Active successfully",
+    "requestInactive": "Lead status Inactive successfully",
+    "requestAssign": "Lead assign successfully",
+    "requestReassign": "Lead  Reassign successfully",
+    "requestUnAssign": "Lead  Un Assign successfully",
+    "requestAllreadyAssign": "Lead allready assign this user"
+  },
+  "requestsValidation": {
+    "customerName": "Customer Name is required.",
+    "noOfSample": "No of Sample is Required",
+    "customerLength": "Customer should be at least 1 chars",
+    "contactName": "Contact Name is required.",
+    "contactLength": "Contact should be at least 1 chars",
+    "deliveryAddress": "Delivery Address is required.",
+    "email": "Email Id is required.",
+    "phone": "Phone Number is required.",
+    "closingDate": " Closing Date is required.",
+    "customerNumber": "Customer Number is required.",
+    "customerlength": "Customer Number should be at least 1 chars",
+    "businessName": "Business Name is required.",
+    "businessLength": "Business Name should be at least 1 chars",
+    "stateName": "State Name is required",
+    "stateLength": "State Name should be at least 1 chars",
+    "noOfSampleNotString": "Number Of Sample should be in integer"
+  },
+  "orders": {
+    "orderCreate": "Order Created successfully",
+    "orderFound": "Order found successfully",
+    "orderUpdate": "Order update successfully",
+    "orderDelete": "Order deleted successfully",
+    "orderActive": "Order status Active successfully",
+    "orderInactive": "Order status Inactive successfully"
+  },
+  "followUps": {
+    "followUpCreate": "Follow Up Created successfully",
+    "followUpNotFound": "Follow Up Not Found",
+    "followUpUpdate": "Follow Up update successfully",
+    "followUpDelete": "Follow Up deleted successfully",
+    "followUpActive": "Follow Up status Active successfully",
+    "followUpInactive": "Follow Up status Inactive successfully"
+  },
+  "cities": {
+    "citiesCreate": "City created successfully",
+    "citiesUpdate": "City updated successfully",
+    "updateCitiesStatus": "City status update successfully",
+    "citiesDelete": "City deleted successfully",
+    "citiesFound": "City Found successfully",
+    "citiesNoFound": "City Not Found successfully",
+    "citiesInActive": "City Inactive successfully",
+    "citiesActive": "City Active successfully"
+  },
+  "citiesValidation": {
+    "citiesRequired": "City is required.",
+    "citiesLength": "Please enter City",
+    "citiesInt": "Please enter valid City",
+    "stateIdRequired": "State Id is required",
+    "stateIdInt": "Enter a valid stateId"
+  },
+  "states": {
+    "statesCreate": "State created successfully",
+    "statesUpdate": "State updated successfully",
+    "statusUpdate": "status update successfully",
+    "updateStatesStatus": "state status update successfully",
+    "statesDelete": "State deleted successfully",
+    "statesNoDelete": "State Not deleted",
+    "statesFound": "State Found successfully",
+    "statesNoFound": "State Not Found successfully",
+    "statesInActive": "State Inactive successfully",
+    "statesActive": "State Active successfully"
+  },
+  "statesValidation": {
+    "statesRequired": "State is required.",
+    "statesLength": "Please enter State",
+    "statesInt": "Please enter valid State"
+  },
+  "countries": {
+    "countriesCreate": "Country created successfully",
+    "countriesUpdate": "Country updated successfully",
+    "updateCountriesStatus": "Country status update successfully",
+    "countriesDelete": "Country deleted successfully",
+    "countriesFound": "Country Found successfully",
+    "countriesNoFound": "Country Not Found successfully",
+    "countriesInActive": "Country Inactive successfully",
+    "countriesActive": "Country Active successfully"
+  },
+  "countriesValidation": {
+    "countriesRequired": "Country is required.",
+    "countriesLength": "Please enter country",
+    "countriesInt": "Please enter valid country"
+  },
+  "weekResults": {
+    "weekResultsCreate": "Week Result created successfully",
+    "weekResultsUpdate": "Week Result updated successfully",
+    "updateweekResultsStatus": "Week Result status update successfully",
+    "weekResultsDelete": "Week Result deleted successfully",
+    "weekResultsNotDelete": "Week Result Not deleted",
+    "weekResultsFound": "Week Result Found successfully",
+    "weekResultsNoFound": "Week Result Not Found successfully",
+    "weekResultsInActive": "Week Result Inactive successfully",
+    "weekResultsActive": "Week Result Active successfully"
+  },
+  "weekResultsValidation": {
+    "weekResultsWeekName": "Week Name is required.",
+    "weekResultsWeekNameInt": "Week Name must be in chars",
+    "weekResultsWeekNameLength": "Please enter valid Week Name",
+    "weekResultsContactName": "Contact Name is required.",
+    "weekResultsContactNameInt": "Contact Name must be in chars",
+    "weekResultsContactNameLength": "Please enter valid Contact Name",
+    "weekResultsCompanyName": "Company Name is required.",
+    "weekResultsCompanyNameInt": "Company Name must be in chars",
+    "weekResultsCompanyNameLength": "Please enter valid Company Name",
+    "weekResultsStatus": "Status is required.",
+    "weekResultsStatusLength": "Status must be in chars",
+    "weekResultsStatusInt": "Please enter valid Status"
+  },
+  "callDetails": {
+    "callDetailsCreate": "Call Details created successfully",
+    "callDetailsUpdate": "Call Details updated successfully",
+    "updatecallDetailsStatus": "Call Details status update successfully",
+    "callDetailsDelete": "Call Details deleted successfully",
+    "callDetailsNotDelete": "Call Details Not deleted",
+    "callDetailsFound": "Call Details Found successfully",
+    "callDetailsNoFound": "Call Details Not Found successfully",
+    "callDetailsInActive": "Call Details Inactive successfully",
+    "callDetailsActive": "Call Details Active successfully"
+  },
+  "source": {
+    "sourceCreate": "Source created successfully",
+    "sourceUpdate": "Source updated successfully",
+    "updateSourceStatus": "Source status update successfully",
+    "sourceDelete": "Source deleted successfully",
+    "sourceNotDelete": "Source Not deleted",
+    "sourceFound": "Source Found successfully",
+    "sourceNoFound": "Source Not Found successfully",
+    "sourceInActive": "Source Inactive successfully",
+    "sourceActive": "Source Active successfully",
+    "requiredName": "Name is required",
+    "intName": "Name should be String",
+    "nameLength": "Name should be at least 1 chars ",
+    "requiredImg": "Image is required",
+    "userIsInt": "source.userIsInt"
+  },
+  "category": {
+    "categoryCreate": "Category created successfully",
+    "categoryUpdate": "Category updated successfully",
+    "updateCategoryStatus": "Category status update successfully",
+    "categoryDelete": "Category deleted successfully",
+    "categoryFound": "Category Found successfully",
+    "categoryNoFound": "Category Not Found successfully",
+    "categoryInActive": "Category Inactive successfully",
+    "categoryActive": "Category Active successfully"
+  },
+  "hirings": {
+    "hiringCreate": "Hiring created successfully",
+    "hiringUpdate": "Hiring updated successfully",
+    "updatehiringStatus": "Hiring status update successfully",
+    "hiringDelete": "Hiring deleted successfully",
+    "hiringFound": "Hiring Found successfully",
+    "hiringNoFound": "Hiring Not Found successfully",
+    "hiringInActive": "Hiring Inactive successfully",
+    "hiringActive": "Hiring Active successfully"
+  },
+  "hiringValidation": {
+    "technologyRequired": "Technology is required",
+    "candidateNameRequired": "Candidate name is required",
+    "technologyLength": "Technology should be at least 1 chars ",
+    "candidateLength": "Candidate Name should be at least 1 chars "
+  },
+  "jobRoles": {
+    "jobRoleCreate": "Job created successfully",
+    "jobRoleUpdate": "Job updated successfully",
+    "updatejobRoleStatus": "Job status update successfully",
+    "jobRoleDelete": "Job deleted successfully",
+    "jobRoleFound": "Job Found successfully",
+    "jobRoleNoFound": "Job Not Found successfully",
+    "jobRoleInActive": "Job Inactive successfully",
+    "jobRoleActive": "Job Active successfully"
+  },
+  "jobRolesValidation": {
+    "nameRequired": "Name is required",
+    "nameLength": "Name should be at least 1 chars"
+  },
+  "inquires": {
+    "inquireCreate": "Inquiry created successfully",
+    "inquireUpdate": "Inquiry updated successfully",
+    "updateInquireStatus": "Inquiry status update successfully",
+    "inquireDelete": "Inquiry deleted successfully",
+    "inquireFound": "Inquiry Found successfully",
+    "inquireNoFound": "Inquiry Not Found successfully",
+    "inquireInActive": "Inquiry Inactive successfully",
+    "inquireActive": "Inquiry Active successfully",
+    "inquireAssign": "Inquiry assign successfully",
+    "inquireBulkAssign": "Inquiry assign in bulk successfully",
+    "inquireBulkImport": "Inquiry have been successfully uploaded",
+    "inquireReassign": "Inquiry Re-assign successfully",
+    "inquireUnAssign": "Inquiry Un Assign successfully",
+    "inquireAllreadyAssign": "Inquiry allready assign this user",
+    "inquireAlreadyConvert": "Inquiry already converted in client",
+    "inquireConvert": "Inquiry converted to client",
+    "inquireArrayRequired": "inquireId and StaffId  is required",
+    "staffIdRequired": "StaffId is not exist",
+    "idRequired": "InquireId is not exist"
+  },
+  "testImonials": {
+    "testImonialsCreate": "Test Imonials created successfully",
+    "testImonialsUpdate": "Test Imonials updated successfully",
+    "updatetestImonialsStatus": "Test Imonials status update successfully",
+    "testImonialsDelete": "Test Imonials deleted successfully",
+    "testImonialsNotDelete": "Test Imonials Not deleted",
+    "testImonialsFound": "Test Imonials Found successfully",
+    "testImonialsNoFound": "Test Imonials Not Found successfully",
+    "testImonialsInActive": "Test Imonials Inactive successfully",
+    "testImonialsActive": "Test Imonials Active successfully"
+  },
+  "customerValidation": {
+    "emailUse": "E-mail already in use",
+    "wrongEmail": "This email does not exist"
+  },
+  "testImonialsValidation": {
+    "testImonialsName": "Week Name is required.",
+    "testImonialsInt": "Week Name must be in chars",
+    "testImonialsLength": "Please enter valid Week Name"
+  },
+  "testImonialsName": {
+    "testImonialsName": "testImonialsName.testImonialsName",
+    "testImonialsInt": "testImonialsName.testImonialsInt",
+    "testImonialsLength": "testImonialsName.testImonialsLength"
+  },
+  "leadComments": {
+    "create": "Lead comment created successfully",
+    "update": "Lead comment update successfully",
+    "delete": "Lead comment deleted successfully",
+    "active": "Lead comment active successfully",
+    "inactive": "Lead comment inactive successfully"
+  },
+  "inquireComments": {
+    "create": "Inquire comment created successfully",
+    "update": "Inquire comment update successfully",
+    "delete": "Inquire comment deleted successfully",
+    "active": "Inquire comment active successfully",
+    "inactive": "Inquire comment inactive successfully"
+  },
+  "attachments": {
+    "create": "Attachment created successfully",
+    "update": "Attachment update successfully",
+    "delete": "Attachment deleted successfully",
+    "active": "Attachment active successfully",
+    "inactive": "Attachment inactive successfully"
+  },
+  "proformas": {
+    "create": "Proforma created successfully",
+    "update": "Proforma update successfully",
+    "delete": "Proforma deleted successfully",
+    "active": "Proforma active successfully",
+    "inactive": "Proforma inactive successfully"
+  },
+  "products": {
+    "create": "Product created successfully",
+    "update": "Product update successfully",
+    "delete": "Product deleted successfully",
+    "active": "Product active successfully",
+    "inactive": "Product inactive successfully"
+  },
+  "desks": {
+    "create": "Desk created successfully",
+    "update": "Desk update successfully",
+    "delete": "Desk deleted successfully",
+    "active": "Desk active successfully",
+    "inactive": "Desk inactive successfully"
+  },
+  "notification": {
+    "create": "Notification created successfully",
+    "update": "Notification update successfully",
+    "deleted": "Notification deleted successfully",
+    "active": "Notification Active successfully",
+    "inActive": "Notification Inactive successfully",
+    "readNotification": "Notification read successfully"
+  },
+  "userFcmToken": {
+    "create": "User fcm token created successfully",
+    "update": "User fcm token update successfully",
+    "deleted": "User fcm token deleted successfully",
+    "active": "User fcm token Active successfully",
+    "inActive": "User fcm token Inactive successfully"
+  },
+  "": "",
+  "Inquiry convert successfully to lead": "Inquiry convert successfully to lead",
+  "Inquiry already converted to lead": "Inquiry already converted to lead",
+  "Lead convert successfully to Client": "Lead convert successfully to Client",
+  "Lead already converted to client": "Lead already converted to client",
+  "Inquiry imported": "Inquiry imported"
+}
