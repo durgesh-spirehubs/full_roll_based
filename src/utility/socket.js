@@ -1,7 +1,7 @@
 import db from "../models/index.js";
 import { decodeToken } from "./jwt.js";
 const { Message, Rooms, RoomMembers, Users } = db;
-import {Op,fn,col } from "sequelize";
+import { Op, fn, col } from "sequelize";
 
 const clients = new Map();
 const rooms = new Map();
@@ -24,7 +24,7 @@ export const sockethandler = (socket, req) => {
     try {
       const msg = JSON.parse(message);
       const { type, roomId, text, seen, messageId } = msg;
-      if (!type || !roomId || !authorId) {
+      if (!type) {
         socket.send(JSON.stringify({ type: "error", message: "error occur" }));
         return;
       }
@@ -43,22 +43,7 @@ export const sockethandler = (socket, req) => {
         clients.set(authorId, socket);
         if (!rooms.has(roomId)) rooms.set(roomId, new Set());
         rooms.get(roomId).add(authorId);
-        const unseenMessage = await Message.findAll({
-          where: { roomId, authorId: { [Op.ne]: authorId }, seen: false },
-          order: [["createdAt", "ASC"]],
-        });
         socket.send(JSON.stringify({ type: "joined", roomId, authorId }));
-        const unseenMessageCount = unseenMessage.length;
-        if (unseenMessage.length > 0) {
-          socket.send(
-            JSON.stringify({
-              type: "unseenMessage",
-              roomId,
-              count: unseenMessageCount,
-              messages: unseenMessage,
-            })
-          );
-        }
       } else if (type === "message") {
         if (!text) {
           socket.send(
@@ -95,7 +80,7 @@ export const sockethandler = (socket, req) => {
             );
           }
         }
-      } else if (type == "seen") {
+      } else if (type === "seen") {
         await Message.update(
           { seen },
           {
@@ -116,7 +101,7 @@ export const sockethandler = (socket, req) => {
             );
           }
         }
-      } else if (type == "delete") {
+      } else if (type === "delete") {
         console.log("delete", authorId);
         if (!messageId) {
           socket.send(
@@ -158,13 +143,33 @@ export const sockethandler = (socket, req) => {
             );
           }
         }
-      } else if (type == "count") {
+      } else if (type === "count") {
         const unseencount = await Message.findAll({
-          attributes:["roomId",[fn("COUNT",col("id")),"count"]],
-          where: { seen: false,authorId:{[Op.ne]:authorId}},
+          attributes: ["roomId", [fn("COUNT", col("id")), "count"]],
+          where: { seen: false, authorId: { [Op.ne]: authorId } },
           group: ["roomId"],
         });
-        socket.send(JSON.stringify({type:"count",data:unseencount}));
+        socket.send(JSON.stringify({ type: "count", data: unseencount }));
+      } else if (type === "unseen") {
+        const unseenMessage = await Message.findAll({
+          where: {
+            roomId: roomId,
+            authorId: { [Op.ne]: authorId },
+            seen: false,
+          },
+          order: [["createdAt", "ASC"]],
+        });
+        const unseenMessageCount = unseenMessage.length;
+        if (unseenMessage.length > 0) {
+          socket.send(
+            JSON.stringify({
+              type: "unseenMessage",
+              roomId,
+              count: unseenMessageCount,
+              messages: unseenMessage,
+            })
+          );
+        }
       }
     } catch (err) {
       console.error("Error in message handler:", err);
