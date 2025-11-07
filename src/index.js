@@ -75,68 +75,68 @@ if (process.env.APP_ENV === "prod") {
 //   });
 //});
 
-app.post("/createRoom", async (req, res) => {
-  try {
-    const { senderId, roomName, text } = req.body;
-    const data = await Rooms.create({
-      senderId: senderId,
-      roomName: roomName,
-      text: text,
-    });
-    res.status(200).json({
-      message: "successful room created",
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({
-      messge: "fail to create room",
-    });
-  }
-});
+// app.post("/createRoom", async (req, res) => {
+//   try {
+//     const { senderId, roomName, text } = req.body;
+//     const data = await Rooms.create({
+//       senderId: senderId,
+//       roomName: roomName,
+//       text: text,
+//     });
+//     res.status(200).json({
+//       message: "successful room created",
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({
+//       messge: "fail to create room",
+//     });
+//   }
+// });
 
-app.post("/addMember", async (req, res) => {
-  const { roomId, senderId } = req.body;
-  try {
-    const rooMember = await RoomMembers.create({
-      roomId: roomId,
-      senderId: senderId,
-    });
-    res.status(200).json({
-      message: "successful member added",
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({
-      message: "server error",
-    });
-  }
-});
-app.get("/history/:id", async (req, res) => {
-  try {
-    const data = await Message.findAll({
-      where: { roomId: req.params.id },
-      include: {
-        model: Users,
-        as: "authorDetail",
-        attributes: ["name"],
-      },
-    });
-    if (!data) {
-      res.status(404).json({
-        message: "No data found",
-      });
-    }
-    res.status(200).json({
-      message: "history found in room",
-      data: data,
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({
-      message: "server serror",
-    });
-  }
-});
+// app.post("/addMember", async (req, res) => {
+//   const { roomId, senderId } = req.body;
+//   try {
+//     const rooMember = await RoomMembers.create({
+//       roomId: roomId,
+//       senderId: senderId,
+//     });
+//     res.status(200).json({
+//       message: "successful member added",
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({
+//       message: "server error",
+//     });
+//   }
+// });
+// app.get("/history/:id", async (req, res) => {
+//   try {
+//     const data = await Message.findAll({
+//       where: { roomId: req.params.id },
+//       include: {
+//         model: Users,
+//         as: "authorDetail",
+//         attributes: ["name"],
+//       },
+//     });
+//     if (!data) {
+//       res.status(404).json({
+//         message: "No data found",
+//       });
+//     }
+//     res.status(200).json({
+//       message: "history found in room",
+//       data: data,
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({
+//       message: "server serror",
+//     });
+//   }
+// });
 const clients = new Map();
 const rooms = new Map();
 wss.on("connection", (socket, req) => {
