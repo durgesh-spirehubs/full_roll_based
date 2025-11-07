@@ -10,6 +10,7 @@ export default (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+
     }
   }
   Rooms.init({

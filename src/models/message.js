@@ -10,6 +10,11 @@ export default (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.hasOne(models.Users,{
+        foreignKey:"id",
+        sourceKey:"authorId",
+        as:"authorDetail"
+      })
     }
   }
   Message.init({

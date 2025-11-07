@@ -16,7 +16,7 @@ const __dirname = path.dirname(__filename);
 import cors from "cors";
 import db from "../src/models/index.js";
 import { decodeToken } from "./utility/jwt.js";
-const { Message, Rooms, RoomMembers } = db;
+const { Message, Rooms, RoomMembers, Users } = db;
 app.use(express.json());
 app.use(i18n.init);
 app.use(cors());
@@ -108,6 +108,32 @@ app.post("/addMember", async (req, res) => {
     console.log(error);
     res.status(500).json({
       message: "server error",
+    });
+  }
+});
+app.get("/history/:id", async (req, res) => {
+  try {
+    const data = await Message.findAll({
+      where: { roomId: req.params.id },
+      include: {
+        model: Users,
+        as: "authorDetail",
+        attributes: ["name"],
+      },
+    });
+    if (!data) {
+      res.status(404).json({
+        message: "No data found",
+      });
+    }
+    res.status(200).json({
+      message: "history found in room",
+      data: data,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "server serror",
     });
   }
 });
