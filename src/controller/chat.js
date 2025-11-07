@@ -60,7 +60,7 @@ export const history= async (req, res) => {
     } catch (error) {
       console.log(error);
       res.status(500).json({
-        message: "server serror",
+        message: "server error",
       });
     }
   };
