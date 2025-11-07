@@ -20,7 +20,8 @@ export default (sequelize, DataTypes) => {
   Message.init({
     authorId: DataTypes.STRING,
     roomId: DataTypes.STRING,
-    text: DataTypes.TEXT
+    text: DataTypes.TEXT,
+    seen:DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Message',

@@ -4,4 +4,4 @@ const router=Router();
 router.post("/createRoom",createRoom);
 router.post("/addMember",addMember);
 router.get("/history/:id",history);
-export default router
+export default router;
