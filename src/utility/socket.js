@@ -2,7 +2,6 @@ import db from "../models/index.js";
 import { decodeToken } from "./jwt.js";
 const { Message, Rooms, RoomMembers, Users } = db;
 import { Op, fn, col } from "sequelize";
-
 const clients = new Map();
 const rooms = new Map();
 export const sockethandler = (socket, req) => {
@@ -68,16 +67,22 @@ export const sockethandler = (socket, req) => {
           authorId,
           text,
           seen: false,
+          raw: true,
         });
+        const plainMessage = newMessage.toJSON();
         await Rooms.update({ text }, { where: { id: roomId } });
+        const data = await Users.findOne({
+          where: { id: authorId },
+          attributes: ["name"],
+        });
+        const name = data.dataValues.name;
+        const sendMessage = { ...plainMessage, name: name };
         const roomMembers = await RoomMembers.findAll({ where: { roomId } });
         for (const roomMember of roomMembers) {
           const userId = roomMember.senderId;
           const clientSocket = clients.get(userId);
           if (clientSocket && clientSocket.readyState === 1) {
-            clientSocket.send(
-              JSON.stringify({ type: "message", roomId, authorId, text, seen })
-            );
+            clientSocket.send(JSON.stringify({ type: "message", sendMessage }));
           }
         }
       } else if (type === "seen") {
@@ -148,6 +153,7 @@ export const sockethandler = (socket, req) => {
           attributes: ["roomId", [fn("COUNT", col("id")), "count"]],
           where: { seen: false, authorId: { [Op.ne]: authorId } },
           group: ["roomId"],
+          raw: true,
         });
         socket.send(JSON.stringify({ type: "count", data: unseencount }));
       } else if (type === "unseen") {

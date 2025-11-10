@@ -25,5 +25,5 @@ if (process.env.APP_ENV === "prod") {
 }
 wss.on("connection", sockethandler);
 server.listen(process.env.PORT, () => {
-  console.log("server started");
+  console.log("server started",process.env.PORT);
 });

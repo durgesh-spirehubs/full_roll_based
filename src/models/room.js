@@ -10,7 +10,11 @@ export default (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-
+      this.hasMany(models.RoomMembers, {
+        foreignKey: "roomId",  
+        sourceKey: "id",      
+        as: "members"
+      });
     }
   }
   Rooms.init({

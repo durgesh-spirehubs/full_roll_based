@@ -1,7 +1,6 @@
 import db from "../models/index.js";
 import { decodeToken } from "../utility/jwt.js";
 const { Message, Rooms, RoomMembers, Users } = db;
-
 export const createRoom= async (req, res) => {
     try {
       const { senderId, roomName, text } = req.body;
@@ -20,7 +19,6 @@ export const createRoom= async (req, res) => {
       });
     }
   }
-
   export const addMember= async (req, res) => {
     const { roomId, senderId } = req.body;
     try {
@@ -64,4 +62,28 @@ export const history= async (req, res) => {
       });
     }
   };
+export const fetchRoom = async (req, res) => {
+  try {
+    const {id} = req.params;
+    const data = await RoomMembers.findAll({
+      where: { senderId: id},
+      include: {
+        model: Rooms, 
+        as: "roomDetail",
+        attributes: ["id", "RoomName"],
+      },
+    });
+    res.status(200).json({
+      message: "fetch detail",
+      data: data,
+    });
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      message: "room error",
+      error: error.message,
+    });
+  }
+};
+
     

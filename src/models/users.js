@@ -7,7 +7,14 @@ export default (sequelize, DataTypes) => {
         foreignKey: "role_id",
         as: "role",
       });
-    }
+  
+
+    this.hasMany(models.RoomMembers, {
+  foreignKey: "senderId",
+  as: "roomMembers"
+    });
+};
+
   }
   Users.init(
     {

@@ -10,6 +10,17 @@ export default (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+         this.belongsTo(models.Rooms, {
+        foreignKey: "roomId",  
+        targetKey: "id",     
+        as: "roomDetail"
+      });
+
+      this.belongsTo(models.Users, {
+  foreignKey: "senderId",
+  as: "userDetail"
+});
+
     }
   }
   RoomMembers.init({
