@@ -16,7 +16,7 @@ export const createInquiry = async (req, res, next) => {
     const createInquiry = await Leads.create(req.body);
       console.log(payload)
    const data=await  createNotification(payload);
-    res.status(200).json({
+    res.status(201).json({
       message: "successful inquiry created",
       createInquiry: createInquiry,
       notificationdata:data
@@ -216,7 +216,7 @@ export const getInquiry = async (req, res, next) => {
         // }
     }
     query["include"]=[assingUser];
-    query["attributes"]=["id","name","companyName","status"];
+    query["attributes"]=["id","name","companyName","status","type","description"];
     const data = await Leads.findAndCountAll(query);
     return res.status(200).json({
       message: "sucesss",
