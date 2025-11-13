@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { assignInquiry, bulkinquire, converttolead, createInquiry, getInquiry, unassignInquiry, updateInquiry } from "../controller/inquriy.js";
+import { assignInquiry, bulkinquire, converttolead, createInquiry, getInquiry, singleInquiry, unassignInquiry, updateInquiry } from "../controller/inquriy.js";
 import { ensureAuth } from "../middleware/auth.js";
 
 const router=Router();
@@ -11,5 +11,6 @@ router.post("/:id",ensureAuth("Admin","Staff"),assignInquiry);
 router.post("/assign-bulk",ensureAuth("Admin","Staff"),bulkinquire);
 router.patch("/un-assignInquiry/:id",ensureAuth("Admin","Staff"),unassignInquiry);
 router.post("/convert-lead/:id",ensureAuth("Admin","Staff"),converttolead);
+router.get("/:id",ensureAuth("Admin","Staff","User"),singleInquiry)
 
 export default router;

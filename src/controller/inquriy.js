@@ -284,11 +284,7 @@ export const unassignInquiry = async (req, res, next) => {
 };
 export const converttolead = async (req, res, next) => {
   try {
-    if (!req.params.id) {
-      return res.status(404).json({
-        message: "id not passed",
-      });
-    }
+ 
     const leaddata = await Leads.findOne({
       where: { id: req.params.id },
     });
@@ -314,3 +310,17 @@ export const converttolead = async (req, res, next) => {
     next(error);
   }
 };
+
+export const singleInquiry=async (req,res,next)=>{
+    try{
+         const leaddata = await Leads.findOne({
+      where: { id: req.params.id,type:"Inquiry" },
+    });
+    res.status(200).json({
+      message:"successful data",
+      data:leaddata
+    })
+    }catch(error){
+      next(error)
+    }
+}
