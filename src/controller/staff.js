@@ -139,3 +139,36 @@ export const getallStaff = async (req, res,next) => {
   }
 }
 
+
+export const getStaff = async (req, res,next) => {
+  let query={};
+  try{
+     query["where"]={user_type:"Staff"};
+     query["attributes"]=[
+      "id",
+      "name",
+      "email",
+      "user_type"
+     ];
+     query["include"]=[
+      {
+        model:Roles,
+        as:"role",
+        attributes:["id","roleName","accessID"]
+      }
+     ];
+     let data=await Users.findAll(query);
+     if(!data){
+      return res.status(404).json({
+        status:"data not found",
+      })
+     }
+     res.status(200).send({
+      status:"success",
+      data
+     })
+  }
+  catch(error){
+    next(error)
+  }
+}

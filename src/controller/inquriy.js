@@ -294,7 +294,7 @@ export const converttolead = async (req, res, next) => {
       });
     }
     if (leaddata.type == "Lead") {
-      return res.status(409).json({
+      return res.status(400).json({
         message: "lead already present",
       });
     }
@@ -310,7 +310,6 @@ export const converttolead = async (req, res, next) => {
     next(error);
   }
 };
-
 export const singleInquiry=async (req,res,next)=>{
     try{
          const leaddata = await Leads.findOne({

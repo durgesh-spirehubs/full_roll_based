@@ -10,7 +10,7 @@ router.get("/",ensureAuth("Admin","Staff","User"),getInquiry);
 router.post("/:id",ensureAuth("Admin","Staff"),assignInquiry);
 router.post("/assign-bulk",ensureAuth("Admin","Staff"),bulkinquire);
 router.patch("/un-assignInquiry/:id",ensureAuth("Admin","Staff"),unassignInquiry);
-router.post("/convert-lead/:id",ensureAuth("Admin","Staff"),converttolead);
+router.post("/convert-lead/:id",ensureAuth("Admin","Staff","User"),converttolead);
 router.get("/:id",ensureAuth("Admin","Staff","User"),singleInquiry)
 
 export default router;
